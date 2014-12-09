@@ -1,0 +1,3 @@
+Rank 2 team:
+
+For the third classifier, we random pick small patches from all the images and do ZCA whitening. With preprocessed patches, we learn K centroids with kmeans. Then the orignial images are recontructed with the centroids learned from k-means.We reconsturct the input image by convert each patch into a K dimension vector. The reconstructed features are fed into L2-SVM. We get the best result with 8*8 patch size, and k=1500 centroids the accuracy is 61.067%. We also trained 14 classfiers with multiscale patches (4*4, 5*5, 6*6, 7*7, 8*8, 9*9, 10*10), and each are clustered with K=1500, 2000 centroids. By ensembling and voting, the accuracy is about 64.49%. 
